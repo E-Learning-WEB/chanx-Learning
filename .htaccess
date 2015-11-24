@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^([^/]*)/([^/]*)\.html$ /index.php?sub=$1&act=$2 [L]
