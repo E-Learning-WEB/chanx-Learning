@@ -15,7 +15,7 @@ if(isset($menu_tool))
 {
 	if($menu_tool['tambahmateri'] == 1)
 	{
-		$tombol_menu_tool .= '<li><a class="btn-floating blue"><i class="fa fa-pencil-square-o material-icons"></i></a></li>';
+		$tombol_menu_tool .= '<li><a class="btn-floating blue"><i class="material-icons">mode_edit</i></a></li>';
 	}
 }
 

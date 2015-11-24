@@ -15,6 +15,9 @@ else
 {
 	switch($_GET['sub'])
 	{
+		case 'test':
+		include $engine->view('common/test');
+		break;
 		case 'proses':
 		include $engine->view('common/proses');
 		break;

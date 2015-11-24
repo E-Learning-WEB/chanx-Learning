@@ -130,12 +130,13 @@ class input{
 	public function option($name,$option,$selected = null, $class = null)
 	{
 		$selectedhtml = "";
-		$input = sprintf('<select name="%s" style="%s">\n',$name,$class);
+		$input = sprintf('<select class="input-field" name="%s" style="%s">\n',$name,$class);
 		foreach ($option as $key => $val) {
 			if($key == $selected) {$selectedhtml = "selected";}else{$selectedhtml= null;}
     			$input .= "<option value='$key' $selectedhtml>$val</option>\n";
 		}
 		$input .= "</select>\n";
+		
 		
 		return $input;
 	}

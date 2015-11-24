@@ -1,6 +1,6 @@
 
 
-<div class="fixed-action-btn horizontal click-to-toggle" style="bottom: 90px; right: 24px;">
+<div class="fixed-action-btn click-to-toggle" style="bottom: 90px; right: 24px;">
     <a class="btn-floating btn-large red">
     <i class="large mdi-navigation-menu"></i>
       <i class="large material-icons">mode_edit</i>

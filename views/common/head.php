@@ -5,13 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <meta name="theme-color" content="#2196F3">
     <title><?php echo $situs['judul']; ?></title>
+	
 
-    <!-- CSS  -->
+    <!-- CSS-->
+    <link href="css/materialize.css" type="text/css" rel="stylesheet">    
+    <link href="css/prism.css" rel="stylesheet">
+    <link href="css/ghpages-materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
 	<link href="bootstrap/bootstrap.min.css" type="text/css" rel="stylesheet">    
   	<link href="bootstrap/bootstrap-themes.css" type="text/css" rel="stylesheet">    
     <link href="min/plugin-min.css" type="text/css" rel="stylesheet">
-    <link href="min/custom-min.css" type="text/css" rel="stylesheet" ></head>
-
+    <link href="min/custom-min.css" type="text/css" rel="stylesheet" >
+    
+    
+    <script src="js/materialize.js"></script>
+    
+        <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+    
 <body>
 <!-- Pre Loader -->
 <div id="loader-wrapper">

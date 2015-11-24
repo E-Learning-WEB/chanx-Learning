@@ -7,6 +7,16 @@
 
 <form action="<?php echo $go->to('proses'); ?>" method="post">
 <div class="kotak-login card">
+ <div class="input-field col s12">
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+    <label>Materialize Select</label>
+  </div>
+
 <h5 class="center" style="margin:-10px; padding:20px;">Ubah Profil</h5>
 
 	<p>Data Diri</p>
@@ -52,6 +62,7 @@
     
     
     <div class="input-field s6"> <i class="prefix active"></i>
+    
          <?php 
 	 		$option = array(
 			'Laki' => 'Laki-Laki',
