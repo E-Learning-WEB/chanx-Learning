@@ -1,4 +1,14 @@
+<?php
+if($_GET['act'] == 'baru')
+{
+	$manipulasi['judul'] = 'Menambah Materi Baru';
+}
+else
+{
+	$manipulasi['judul'] = 'Mengedit Materi';
+}
 
+?>
 <div class="container">
   <div class="card">
     <header class="panel-heading bg-theme-gradient">

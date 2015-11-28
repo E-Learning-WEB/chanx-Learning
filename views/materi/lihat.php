@@ -30,6 +30,12 @@
 	$jumlah_materi = $data->num_rows;	
 	$materi = $data->fetch_assoc();
 	$ukuran = number_format($materi['ukuranfile']/1000,2). ' KB';
+	
+    //mengambil extensi file
+	$finfo = finfo_open(FILEINFO_MIME_TYPE);
+	$fileextensi = finfo_file($finfo, $materi['konten']); //berdasarkan MIME
+//    $fileextensi = pathinfo($materi['konten'],PATHINFO_EXTENSION);     
+
 	if(empty($materi['deskripsi']))
 	{
 		$materi['deskripsi'] = '<i>Tidak Ada Deskripsi Materi</i>';
@@ -44,8 +50,25 @@
     <div class="row">
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
+        
+        <?php
+		if(!$fileextensi == 'video/mp4')
+		{
+		?>	
           <object data="materirender.php<?php echo sprintf('?hash=%s',$_GET['hash'])?>" width="100%" height="380px" style="display:block">
           </object>
+         <?php
+		 }
+		 else
+		 {
+		 ?> 
+          <video width="100%" height="380px" controls>
+          <source src="<?php echo $materi['konten']?>" type="video/mp4">
+	        Your browser does not support the video tag.
+        </video>
+          <?php
+		 }
+		 ?>
         </div>
         <div class="card-content" style="padding-bottom:0px;">
           <div class="header">

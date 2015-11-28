@@ -94,8 +94,6 @@ if(isset($_POST['materibaru']))
 	//mulai validasi
 	$pesan = $error = null;
 	
-	echo $_FILES[$nama_input]['size'] .'Kb';
-	die;
 	//mulai validasi filetype
 	if(!(strtoupper($extensi_belakang) == 'PDF' ||
 		strtoupper($extensi_belakang) == 'DOCX' ||
@@ -127,7 +125,6 @@ if(isset($_POST['materibaru']))
 					values($hash,$judul,$deskripsi,$kelas,$urutan,$konten,$checksum,$waktuupload,$ukuran,1)";
 		$data = $db2->query($sql);
 		$data->execute();
-		
 		if($data->rowCount = 1)
 		{
 			move_uploaded_file($tmp_name, $target);	

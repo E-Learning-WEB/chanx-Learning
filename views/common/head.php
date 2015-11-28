@@ -19,8 +19,15 @@
     
     <script src="js/materialize.js"></script>
     
-        <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+    
+    <link href="font/Material Icons.css" type="text/css" rel="stylesheet">
+    <link href="min/custom-min.css" type="text/css" rel="stylesheet" >
+	<!--
+    Jika ada koneksi internet maka hilangkan komen
+    <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     -->
+    
 </head>
     
 <body>
