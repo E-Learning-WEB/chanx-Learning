@@ -1,5 +1,8 @@
+
 <div class="container" style="padding:20px;">
   <?php
+ $pesan  = null; 
+  
 if(isset($_POST['daftar']))
 {
 	include $engine->config('koneksi');
@@ -143,20 +146,54 @@ if(isset($_POST['materibaru']))
 }
 
 
+if(isset($_GET['aksi']))
+{
+	//mengambil data record yang telah ada didatabase
+	$datamateri = $db2->prepare('SELECT * FROM tb_materi WHERE hash = (:hash)');
+	$datamateri->bindValue(':hash', $_GET['hash']);
+	$datamateri->execute();
+	
+	//periksa jika data ada
+	if($datamateri->rowCount() == 1)
+	{	
+		foreach($datamateri as $recordmateri);		
+		//mulai hapus file
+		if (!unlink($recordmateri['konten']))
+		  {
+			  $pesan .= "FIle Gagal dihapus";
+			  $error = 1;
+		  }
+		else
+		  {
+			  $pesan .=  "File Dihapus";
+		  }
+		
+		//mulai hapus dari database
+		if(isset($error))
+		{
+			$datamateri = $db2->prepare('DELETE FROM tb_materi WHERE hash = (:hash)');
+			$datamateri->bindValue(':hash', $_GET['hash']);
+			$datamateri->execute();
+			if($datamateri->rowCount() == 1)
+			{
+				$pesan .= 'Berhasil dihapus dari database';
+			}
+			else
+			{
+				$pesan .= 'gagal dihapus dari database';
+			}
+		}//hapus dari databse
+	}//periksa data
+	else
+	{
+		$pesan .= 'ERROR, terjadi kesalahan, kemungkinan data telah terhapus dari database';
+	}
+	
+} //akhir hapus materi
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+//akhir materimanipulasi
 
 if(isset($_POST['kirimkomentar']))
 {
